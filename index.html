@@ -37,7 +37,7 @@
 @media (min-width:768px){:root{--header-h:80px;}}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;width:100%;}
 body{
   background:var(--bg);
   color:var(--ink);
@@ -391,6 +391,32 @@ footer .fsocial a:hover{border-color:var(--acid);color:var(--acid);}
 [data-stagger] > *{transition-delay:calc(var(--i,0) * 90ms);}
 
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+/* ============ MOBILE-ONLY OVERRIDES ============ */
+@media (max-width:767px){
+  /* tighten dead space between "O nás" and "Služby" */
+  .about{padding-bottom:28px;}
+  .services{padding-top:28px;}
+
+  /* hero: white background instead of black, keep the red radial glow;
+     re-point the ink tokens locally so text/badges/buttons stay legible */
+  .hero{
+    --ink:#111110;
+    --ink-dim:#4c4a45;
+    --ink-faint:#6d6b66;
+    --line-strong:rgba(17,17,16,.24);
+    --acid:var(--red);
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 700px at 85% 0%, rgba(232,50,28,.16), transparent 60%),
+      #ffffff;
+  }
+
+  /* header sits transparent over the (now white) hero until scrolled;
+     flip its text/icon color dark so it stays visible there */
+  header:not(.scrolled){color:#111110;}
+  header:not(.scrolled) .burger span{background:#111110;}
+}
 </style>
 </head>
 <body>
