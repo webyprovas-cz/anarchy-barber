@@ -399,26 +399,8 @@ footer .fsocial a:hover{border-color:var(--acid);color:var(--acid);}
   .about{padding-bottom:28px;}
   .services{padding-top:28px;}
 
-  /* hero: white background instead of black, keep the red radial glow;
-     re-point the ink tokens locally so text/badges/buttons stay legible */
-  .hero{
-    --ink:#111110;
-    --ink-dim:#4c4a45;
-    --ink-faint:#6d6b66;
-    --line-strong:rgba(17,17,16,.24);
-    --acid:var(--red);
-    color:var(--ink);
-    background:
-      radial-gradient(1200px 700px at 85% 0%, rgba(232,50,28,.22), transparent 60%),
-      linear-gradient(180deg, #0a0a0b 0px, rgba(10,10,11,0) 260px),
-      #ffffff;
-  }
-
-  /* nadpis sedí na tmavém pásu nahoře, potřebuje světlý text zpět */
-  .hero h1{color:#f3f1ea;}
-
-  /* header/watermark logo: use the dark-bg variant since it now sits over
-     the dark top strip instead of the white-bg jpg */
+  /* header/watermark logo: dark-bg variant blends into the black hero
+     instead of showing the white-bg jpg as a mismatched box */
   .logo-light{display:none;}
   .logo-dark{display:block;}
 }
